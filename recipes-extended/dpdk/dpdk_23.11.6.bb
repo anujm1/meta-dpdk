@@ -5,7 +5,7 @@ SRC_URI += " file://0001-config-meson-get-cpu_instruction_set-from-meson-opti.pa
 
 STABLE = "-stable"
 BRANCH = "23.11"
-SRCREV = "62f583c49bf67dd4d6733ece14e55fe6839e66d1"
+SRCREV = "484dba4a7efba97a9ce044f87e59c82f0f5aba0b"
 
 PACKAGES =+ "${PN}-examples ${PN}-tools"
 

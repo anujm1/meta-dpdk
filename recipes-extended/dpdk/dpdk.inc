@@ -26,6 +26,7 @@ COMPATIBLE_HOST:linux-gnux32 = "null"
 PACKAGECONFIG ??= " "
 PACKAGECONFIG[afxdp] = ",,libbpf xdp-tools"
 PACKAGECONFIG[libvirt] = ",,libvirt"
+PACKAGECONFIG[shared]  = "--default-library=shared, --default-library=static,"
 
 RDEPENDS:${PN} += "pciutils python3-core"
 RDEPENDS:${PN}-examples += "bash"

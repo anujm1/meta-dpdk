@@ -18,7 +18,7 @@ def get_cpu_instruction_set(bb, d):
         return "core2"
 
 EXTRA_OEMESON = " -Dcpu_instruction_set=${@get_cpu_instruction_set(bb, d)}"
-EXTRA_OEMESON:append:class-target = " --cross-file ${WORKDIR}/dpdk.cross"
+EXTRA_OEMESON:aarch64 = " --cross-file ${WORKDIR}/dpdk.cross"
 
 COMPATIBLE_HOST:libc-musl:class-target = "null"
 COMPATIBLE_HOST:linux-gnux32 = "null"

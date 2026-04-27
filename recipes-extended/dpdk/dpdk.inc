@@ -17,14 +17,15 @@ def get_cpu_instruction_set(bb, d):
     else:
         return "core2"
 
-EXTRA_OEMESON = " -Dexamples=all -Dcpu_instruction_set=${@get_cpu_instruction_set(bb, d)}"
+EXTRA_OEMESON = " -Dcpu_instruction_set=${@get_cpu_instruction_set(bb, d)}"
 EXTRA_OEMESON:append:class-target = " --cross-file ${WORKDIR}/dpdk.cross"
 
 COMPATIBLE_HOST:libc-musl:class-target = "null"
 COMPATIBLE_HOST:linux-gnux32 = "null"
 
-PACKAGECONFIG ??= " "
+PACKAGECONFIG ??= "examples"
 PACKAGECONFIG[afxdp] = ",,libbpf xdp-tools"
+PACKAGECONFIG[examples] = "-Dexamples=all, -Dexamples=,"
 PACKAGECONFIG[libvirt] = ",,libvirt"
 PACKAGECONFIG[shared]  = "--default-library=shared, --default-library=static,"
 
